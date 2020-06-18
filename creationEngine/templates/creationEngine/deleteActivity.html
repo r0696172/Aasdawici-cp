@@ -1,0 +1,11 @@
+{% extends 'overview/base.html' %}
+{% block content %}
+<h3>
+    confirm deletion of {{ activity.activityName }} for {{activity.startTime}}
+</h3>
+<form action="{% url 'creationEngine-deleteActivity' activity.activityID %}" method="POST"> 
+{% csrf_token %}
+    <a href="{% url 'overview-default' %}">cancel</a>
+<button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+{% endblock %}

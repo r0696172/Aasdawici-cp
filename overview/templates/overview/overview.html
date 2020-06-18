@@ -1,0 +1,57 @@
+{% extends 'overview/base.html' %}
+{% load tz %}
+{% block content %}
+    <h1>Overview activities</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>User</th>
+                    <th>Complete</th>
+                    <th>Info</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            
+            
+    {% for activity in activities %}
+        <tr 
+        {# if loop for table styles #}
+        {% if  activity.isComplete%}
+            class="table-success"
+            
+        {% else %}
+            {% if activity.toLate %}
+                class="table-secondary"
+            {% else %}
+                class="table-danger"
+            {% endif %} 
+        {% endif %}
+        
+        >
+            
+                <td scope="row">{{activity.startTime|date:"H:m"}} - {{activity.endTime|date:"H:m"}}</td>
+                <td>{{activity.activityName}}</td>
+                <td>{{activity.userID.userName}}</td>
+                {% if  activity.isComplete%}
+                    <td>Done</td>
+                {% else %}
+                    <td> Not Done</td>
+                {% endif %} 
+                    <td>
+                        <a href="{% url 'creationEngine-deleteActivity' activity.activityID %}">
+                            <div class="alert alert-danger" role="alert">
+                            Delete
+                            </div>
+                        </a>
+                    </td>   
+        </tr>  
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+
+

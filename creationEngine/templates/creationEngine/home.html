@@ -1,0 +1,31 @@
+{% extends 'overview/base.html' %}
+{% block content %}
+
+hello, welcome to the creation engine, here you will find ..
+
+<table class="table">
+    
+    <tbody>
+        <tr>
+            <td scope="row"><a name="" id="" class="btn btn-primary" href="{% url 'creationEngine-createActivity' %}" role="button">Create Activity</a></td>
+        </tr>
+        <tr>
+            <td scope="row"><a name="" id="" class="btn btn-primary" href="{% url 'creationEngine-createUser' %}" role="button">Create User</a></td>
+        </tr>
+        <tr>
+            <td scope="row">
+                <a name="" id="" class="btn btn-primary" href="{% url 'creationEngine-createGroup' %}" role="button">Create Group</a>
+                <a name="" id="" class="btn btn-primary" href="{% url 'groups' %}" role="button">group overview</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+{% endblock %}

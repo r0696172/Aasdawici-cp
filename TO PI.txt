@@ -1,0 +1,18 @@
+python manage.py makemigrations --> check migrations
+python manage.py migrate
+python manage.py check --deploy --> https://docs.djangoproject.com/en/3.0/howto/deployment/
+pray_this_works.exe
+debug @ ~/aasdawici/__pycache__/setting.pych
+
+SFTP to pi @ /var/www/aasdawici
+    --> virtualhost setup --> https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04
+systemctl restart apache2.httpd (or jsut reboot, its a pi)
+
+setup local loopback for database @ port 3306 (should be automatic but ufw can make difficulties)
+                                            --> sudo ufw status
+                                            --> if nothing allowed on port 3306
+                                                --> sudo ufw allow all -p 3306
+
+test everything
+django errorlog @ /etc/python/~~~ --> ls -Retla | grep "Django.log"
+

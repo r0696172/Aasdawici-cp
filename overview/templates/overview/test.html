@@ -1,0 +1,25 @@
+{% extends 'overview/base.html' %}
+{% block content %}
+
+
+
+<h1>testpage</h1>
+
+{{testdata}}
+
+
+{% for value in testdata.activity %}
+<p>
+{{ value }}
+{{ value.startTime|date:"F d, Y  h:m" }}
+</p>
+{% endfor %}
+{% for value in users %}
+<p>
+{{value}}
+</p>
+{% endfor %}
+
+
+
+{% endblock content %}

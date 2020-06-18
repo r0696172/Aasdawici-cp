@@ -1,0 +1,11 @@
+{% extends 'overview/base.html' %}
+{% block content %}
+<h3>
+    confirm removal of '{{link.userID.userName}}' from {{link.groupID.groupName}}
+</h3>
+<form action="{% url 'groups-removeUser' link.linkID %}" method="POST"> 
+{% csrf_token %}
+    <a href="{% url 'overview-default' %}">cancel</a>
+<button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+{% endblock %}

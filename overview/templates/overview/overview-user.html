@@ -1,0 +1,32 @@
+{% extends 'overview/base.html' %}
+{% block content %}
+<h1>overview user</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User Nr</th>
+                    <th>User</th>
+                    <th>Digital Time</th>
+                    <th>Done</th>
+                    <th>To do</th>
+                    <th>Missed</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for user in users %}
+            <tr>
+                <td scope="row">{{user.userID}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.allowDigitalTime}}</td>  
+                <td class="table-success"></td>  
+                <td class="table-active"></td>
+                <td class="table-danger"></td>
+                <td class="table-danger"><a href="{% url 'creationEngine-deleteUser' user.userID %}"><i class="fa fa-trash" aria-hidden="false"></i></a></td>   
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+<a name="" id="" class="btn btn-primary" href="{% url 'creationEngine-createUser' %}" role="button">Create User</a>
+
+{% endblock %}
