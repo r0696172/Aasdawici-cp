@@ -1,0 +1,54 @@
+small things:
+- add links to main template
+    -> overview/base.html (62)
+- add pagnation to overviews
+    ->https://docs.djangoproject.com/en/3.0/topics/pagination/
+- create script for autoinstall
+
+
+Large things:
+-Documentation:
+    -> comments
+    -> how to guide
+    -> technical Documentation
+    -> write Documentation about deploying to differnt serverices/servers
+
+- create multi day task creation
+    -> creationEngine/vieuws.py (167)
+    -> creationEngine/forms.py (maybe set a max, or don't i'm not the police, but see deletion)
+
+- Language support
+    -> database classes
+        -> create model
+        -> create classes
+        -> migrate
+    -> add support
+        -> write code @ overvieuw (self defined GLOBAL function)
+            create list (dict) of words with corresponding keys for each langage (depending on langage selected by the user)
+            then pass lsit to views (all views, thats why global)
+
+    -> create cookie helper for language settings
+        -> https://www.tutorialspoint.com/django/django_cookies_handling.htm
+        -> https://docs.djangoproject.com/en/3.0/topics/http/sessions/
+    -> set up button in overview/base.html
+    -> add all words to language list (and be ready to support other langages)
+
+- imageCreator
+    -> create new applciation
+    $> python manage.py createApp imageCreator
+    -> the goal of this is that the user can create images that get directly mapped to a url for use in the mobile applucation(s). 
+        -> File upload classes
+            -> https://docs.djangoproject.com/en/3.0/ref/files/
+        -> Url creator functions
+            -> https://docs.djangoproject.com/en/3.0/ref/files/storage/#the-filesystemstorage-class
+        -> database access + (custom forms for adding these to the database classes, @ activityImage)
+            -> models.py
+        -> self aware dns/ip mapping (this one is going to be fun, maybe create a settings app --> further expansions)
+
+- activity templates
+    -> most doable one
+        create a sort of template engine, the user selects a template, this gets loaded into the activity creation form, (one of them at least)
+        the user is also able to CRUD his own templates. 
+
+- multiDelete
+    -> now every task has to be deleted seperatly, create something that allows multiple tasks to be deleted simultainiously. 
