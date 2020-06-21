@@ -32,6 +32,7 @@ Large things:
         -> https://docs.djangoproject.com/en/3.0/topics/http/sessions/
     -> set up button in overview/base.html
     -> add all words to language list (and be ready to support other langages)
+        -> if function for unreconized words, or to refer to the index
 
 - imageCreator
     -> create new applciation
